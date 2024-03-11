@@ -15,7 +15,7 @@ bool validate(double num);
 int main() {
     vector<DivSales>divisions(4);
     double qt1, qt2, qt3, qt4;
-    for (int i=0; i<divisions.size(); i++) {
+    for (int i=0; i<4; i++) {
         int div=1;
         cout<<"Enter sales data for Division "<<i+1<<endl;
         cout<<"Quarter "<<div<<": ";
@@ -51,7 +51,7 @@ int main() {
     }
     //prints sales per division
     for (int i=0; i<divisions.size(); i++) {
-        cout<<"Total Sales for Division "<<i+1<<divisions[i].getDivSales()<<endl;
+        cout<<"Total Sales for Division "<<i+1<<": $"<<divisions[i].getDivSales()<<endl;
     }
     //prints out total corporate sales 
     cout<<"Total Corporate Sales: "<<DivSales::getCorpSales()<<endl; 
