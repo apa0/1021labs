@@ -21,20 +21,15 @@ DivSales::DivSales(double quarter1, double quarter2, double quarter3, double qua
 }
 
 void DivSales::setSales(double q1, double q2, double q3, double q4) {
-    //copies arguments into vector 
-    sales.clear();
-    sales.push_back(q1);
-    sales.push_back(q2);
-    sales.push_back(q3);
-    sales.push_back(q4);
     double sum=0;
-    for (const auto& quarter:sales) {
-        sum+=quarter;
+    if (q1 >= 0 && q2 >= 0 && q3 >= 0 && q4 >= 0) {
+        divSales = q1 + q2 + q3 + q4;
+        totalSales += divSales; // Update total corporate sales
+        sales.push_back(q1);
+        sales.push_back(q2);
+        sales.push_back(q3);
+        sales.push_back(q4);
     }
-    //adds four arguments to divSales
-    divSales+=sum;
-    //adds four arguments to totalSales 
-    totalSales+=sum;
 
 }
 double DivSales::getDivSales() {

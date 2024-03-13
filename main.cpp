@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <iostream>
+#include <iomanip>
 #include "DivSales.h"
 using namespace std; 
 
@@ -50,11 +51,11 @@ int main() {
         divisions.push_back(divi);
     }
     //prints sales per division
-    for (int i=0; i<divisions.size(); i++) {
-        cout<<"Total Sales for Division "<<i+1<<": $"<<divisions[i].getDivSales()<<endl;
+    for (int z=0; z<4; z++) {
+        cout<<"Total Sales for Division "<<z+1<<": $"<<fixed<<setprecision(2)<<divisions[z].getDivSales()<<endl;
     }
     //prints out total corporate sales 
-    cout<<"Total Corporate Sales: "<<DivSales::getCorpSales()<<endl; 
+    cout<<"Total Corporate Sales: "<<": $"<<fixed<<setprecision(2)<<DivSales::getCorpSales()<<endl; 
     
 
     return 0;
