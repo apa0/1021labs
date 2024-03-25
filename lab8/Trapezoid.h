@@ -17,7 +17,7 @@ class Trapezoid: public Shape  // inherit publically from Shape
     public: 
         //default constructor
         Trapezoid();
-        Trapezoid(double b1, double b2, double h): base1(b1), base2(b2), height(h), name()
+        Trapezoid(double b1, double b2, double h): Shape("Trapezoid"), base1(b1), base2(b2), height(h) {}
 };
 
 #endif
