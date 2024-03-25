@@ -7,4 +7,9 @@
 
 // implement getArea()
 
+double Trapezoid: getArea() {
+    //returns area of trapezoid 
+    return ((base1+base2)*height/2);
+}
+
 
