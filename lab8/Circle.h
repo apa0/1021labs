@@ -19,7 +19,7 @@ class Circle: public Shape // inherit publically from Shape
         //default constructor
         Circle();
         //argument constructor 
-        Circle(double r): radius(r), name("Circle") {}
+        Circle(double r): Shape("Circle"), radius(r) {}
         //abstract function 
         double getArea();
 

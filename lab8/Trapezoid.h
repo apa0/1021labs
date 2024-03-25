@@ -8,8 +8,16 @@
 
 #include "Shape.h"
 
-class Trapezoid  // inherit publically from Shape
+class Trapezoid: public Shape  // inherit publically from Shape
 {
+    private:
+        double base1;
+        double base2;
+        double height;
+    public: 
+        //default constructor
+        Trapezoid();
+        Trapezoid(double b1, double b2, double h): base1(b1), base2(b2), height(h), name()
 };
 
 #endif
