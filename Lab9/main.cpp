@@ -8,26 +8,28 @@
 #include <iostream>
 #include <string>
 #include "accum.h"
-int main {
-    std::vector<T>v;
+int main () {
+    std::vector<int>v;
     int x;
     std::string temp;
-    cout<<"Enter four numbers: \n";
+    std::cout<<"Enter four numbers: \n";
     for (int i=0; i<4; i++) {
-        cin>>x;
+        std::cin>>x;
         v.push_back(x);
     }
-    cout<<"The sum of the numbers is "<<accum(v);
+    std::cout<<"The sum of the numbers is "<<accum(v);
     
     v.clear();
+
+    std::vector<std::string>v_string; 
     
-    cout<<"Enter four strings: \n";
+    std::cout<<"Enter four strings: \n";
     for (int i=0; i<4; i++) {
-        cin>>temp;
-        v.push_back(temp);
+        std::cin>>temp;
+        v_string.push_back(temp);
     }
 
-    cout<<"The sum of the strings is: "<<accum(v);
+    std::cout<<"The sum of the strings is: "<<accum(v_string);
 
 
 
