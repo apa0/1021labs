@@ -2,7 +2,7 @@
 //CPSC 1020
 //Lab 9: Sequence Accumulation 
 //File: main.cpp
-//Date: 5/1/24
+//Date: 4/1/24
 
 #include <vector>
 #include <iostream>
