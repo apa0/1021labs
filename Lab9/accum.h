@@ -11,7 +11,7 @@
 //takes in integer vector
 template <typename T>
 T accum(std::vector<T> v) {
-    int sum=0;
+    T sum= T();
     for (const auto& x : v) {
         sum+=x;
     }
@@ -19,9 +19,9 @@ T accum(std::vector<T> v) {
 }
 
 //take in string vector 
-template <>
-std::string T accum(std::vector<std::string> v) {
-    std::string result; 
+template <typename T>
+T accum(std::vector<std::string> v) {
+    T result= T();  
     for (const auto& s: v) {
         result+=s;
         result+=", ";
