@@ -25,6 +25,7 @@ T accum(std::vector<std::string> v) {
     T result=T();
     for (size_t i=0; i<v.size(); i++) {
         result+=v[i];
+        //adds comma depending on if it is last element on list 
         if (i!=v.size()-1) {
                 result+=", ";
         } else {

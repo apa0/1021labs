@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include "accum.h"
+
 int main () {
     std::vector<int>v;
     int x;
@@ -29,11 +30,7 @@ int main () {
         v_string.push_back(temp);
     }
 
-    std::cout<<"The sum of the strings is: "<<accum(v_string);
-
-
-
-
+    std::cout<<"The sum of the strings is: "<<accum<std::string>(v_string);
 
 
     return 0;
