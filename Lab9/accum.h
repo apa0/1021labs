@@ -8,6 +8,7 @@
 #include <string>
 #include <vector> 
 
+
 //takes in integer vector
 template <typename T>
 T accum(std::vector<T> v) {
@@ -25,6 +26,7 @@ T accum(std::vector<std::string> v) {
     for (const auto& s: v) {
         result+=s;
         result+=", ";
+        
     }
     return result; 
 

@@ -12,12 +12,12 @@ int main () {
     std::vector<int>v;
     int x;
     std::string temp;
-    std::cout<<"Enter four numbers: \n";
+    std::cout<<"Enter four numbers: ";
     for (int i=0; i<4; i++) {
         std::cin>>x;
         v.push_back(x);
     }
-    std::cout<<"The sum of the numbers is "<<accum(v);
+    std::cout<<"The sum of the numbers is"<<accum(v)<<std::endl;
     
     v.clear();
 
