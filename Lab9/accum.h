@@ -23,12 +23,12 @@ T accum(std::vector<T> v) {
 template <typename T>
 T accum(std::vector<std::string> v) {
     T result=T();
-    result="";
     for (size_t i=0; i<v.size(); i++) {
         result+=v[i];
-        result+=" ";
         if (i!=v.size()-1) {
                 result+=", ";
+        } else {
+            result+=" ";
         }
     }
     return result;

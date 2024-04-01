@@ -17,7 +17,7 @@ int main () {
         std::cin>>x;
         v.push_back(x);
     }
-    std::cout<<"The sum of the numbers is"<<accum(v)<<std::endl;
+    std::cout<<"The sum of the numbers is "<<accum(v)<<std::endl;
     
     v.clear();
 
