@@ -32,8 +32,11 @@ int main() {
 // Create a map to store reviewer names as keys and vectors of ratings as values
     map<string, vector<int>> reviewerRatings;
     //at some point here might want to add something that will sort in the same order, another set?
+    
 // Read the file again to extract reviewer names and ratings
     file.open("movie_reviews.txt");
+
+    //IDEA: use new vector movieTitles to find each movie title in file and populate map with person/rating for each movie title in that order
 while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file, rating)) {
     reviewerRatings[reviewerName].push_back(stoi(rating));
     }
@@ -55,12 +58,15 @@ while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file,
         while (it != ratings.end()) {
             cout << *it;
             ++it;
-            if (it != ratings.end()) {
-                cout << ",";
+        if (it != ratings.end()) {
+            cout << ",";
             }
         }
         cout << endl;
     }
+    
+    
+
     
     return 0;
 }
