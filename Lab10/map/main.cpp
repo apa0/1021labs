@@ -13,22 +13,22 @@ of times it appears. */
 #include <sstream>
 
 int main() {
-    std::string sentence= "Remember I have been prophesying for the past sixty five years that in the natural course of things I a square a mere Square shall evolve into a Pentagon or five sided figure and from there into a Hexagon or six sided figure and thence into a Cube or in other words into the so called regular solids with a myriad of various other forms of which the chief are the tetrahedron the octahedron and the dodecahedron";
+    std::string sentence= "In the beginning was the Word and the Word was with God and the Word was God the same was in the beginning with God";
 
-std::map<std::string,int>wordCount;
-std::stringstream iss(sentence);
-std::string word; 
+    std::map<std::string,int>wordCount;
+    std::stringstream iss(sentence);
+    std::string word; 
 
 
-while (iss>>word) {
-    //increment map's int using word as the key 
-    wordCount[word]+=1;
-}
-for (const auto& pair : wordCount) {
-    std::cout<<pair.first<<": "<<pair.second<<std::endl; 
+    while (iss>>word) {
+        //increment map's int using word as the key 
+        wordCount[word]+=1;
+    }
+    for (const auto& pair : wordCount) {
+        std::cout<<pair.first<<": "<<pair.second<<std::endl; 
 
-}
+    }
 
-return 0;
+    return 0;
 
 }

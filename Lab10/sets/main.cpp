@@ -30,8 +30,10 @@ int main() {
 // Create a new vector with unique elements from the set
     vector<string> uniqueStrings(stringSet.begin(), stringSet.end());
 // Display the unique elements in the new vector using a single space to separate each one. Use an endl at the end of the list.
+    cout<<"Unique elements in the new vector: ";
     for (auto element: uniqueStrings) {
-        cout<<element<<endl; 
+        cout<<element<<" ";
     }
+    cout<<endl;
     return 0;
 }
