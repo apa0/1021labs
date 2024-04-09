@@ -1,12 +1,8 @@
 //Angie Diaz CPSC 1021
 //Lab 10: Part 2: Movie Review Data main.cpp
 //4/8/24
-//Desc: 
-/* This is an almost complete solution to the problem to the movie
-review problem. HOWEVER, you will notice an error in the output that
-shows the ratings from each reviewer. Identify this error and fix the
-code to work properly.
- */
+//Desc: Reads in from file, prints movie titles and ratings in order, also prints 0 for any empty ratings 
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -16,6 +12,7 @@ code to work properly.
 using namespace std;
 
 int main() {
+
 // Create a set to store unique movie titles
     set<string> uniqueMovieTitles;
 
@@ -27,6 +24,7 @@ int main() {
         uniqueMovieTitles.insert(movieTitle);
     }
     file.close();
+
 
 // Copy unique movie titles from set to vector
     vector<string> movieTitles(uniqueMovieTitles.begin(), uniqueMovieTitles.end());
