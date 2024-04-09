@@ -5,7 +5,8 @@
 /* This is an almost complete solution to the problem to the movie
 review problem. HOWEVER, you will notice an error in the output that
 shows the ratings from each reviewer. Identify this error and fix the
-code to work properly. POTENTIAL PROBLEM: order of ratings is not the same as order of titles, so will need to change that..*/
+code to work properly.
+ */
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -31,15 +32,31 @@ int main() {
     vector<string> movieTitles(uniqueMovieTitles.begin(), uniqueMovieTitles.end());
 // Create a map to store reviewer names as keys and vectors of ratings as values
     map<string, vector<int>> reviewerRatings;
-    //at some point here might want to add something that will sort in the same order, another set?
     
 // Read the file again to extract reviewer names and ratings
     file.open("movie_reviews.txt");
+    
 
-    //IDEA: use new vector movieTitles to find each movie title in file and populate map with person/rating for each movie title in that order
-while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file, rating)) {
-    reviewerRatings[reviewerName].push_back(stoi(rating));
+  
+    while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file, rating)) {
+            //New approach: creating vector of 0's of same size as movieTitles, then populating it with ratings in corresponding positions
+            
+            int size=movieTitles.size();
+
+            //if reviewer does not exist in map yet, create a vector of 0's for it 
+            if (reviewerRatings.find(reviewerName)==reviewerRatings.end()) {
+                reviewerRatings[reviewerName]=vector<int>(size, 0);
+            }
+            //finding index of movie title in movieTitles vector 
+            auto it=find(movieTitles.begin(), movieTitles.end(), movieTitle);
+            if (it!=movieTitles.end()) {
+                //calculating index by subtracting the iterator from begining position 
+                int index=it-movieTitles.begin();
+                reviewerRatings[reviewerName][index]=stoi(rating);
+            }
+            
     }
+    
     file.close();
 // Output each movie title separated by /
     cout << "HERE ARE THE MOVIE TITLES\n";
@@ -52,7 +69,9 @@ while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file,
     cout << "HERE ARE THE MOVIE RATINGS\n";
     cout << "===========================\n";
     for (const auto& pair : reviewerRatings) {
+        //printing name 
         cout << pair.first << ": ";
+        //setting iterator equal to int vector 
         auto ratings = pair.second;
         auto it = ratings.begin();
         while (it != ratings.end()) {
