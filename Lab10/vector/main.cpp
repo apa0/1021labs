@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+#include <cmath>
 using namespace std; 
 
 int main() {
@@ -16,9 +17,10 @@ int main() {
         {"Charlie", {92, 95, 90, 87, 76, 90}},
         {"Diana", {80, 85}}
     };
-    int sum=0;
+    
 // Display the contents
     for (const auto& student : studentData) {
+        int sum=0;
         cout << student.first << "'s average score: ";
         for (int score : student.second) {
             //cout << score << " ";
@@ -26,7 +28,7 @@ int main() {
             sum+=score; 
         }
         //getting average 
-        cout<<sum/student.second.size()<<endl;
+        cout<<round(sum/student.second.size())<<endl;
     }
 return 0;
 }
