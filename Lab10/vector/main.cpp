@@ -21,7 +21,7 @@ int main() {
 // Display the contents
     for (const auto& student : studentData) {
         int sum=0;
-        cout << student.first << "'s average score: ";
+        cout << student.first << ": ";
         for (int score : student.second) {
             //cout << score << " ";
             //adding each score
